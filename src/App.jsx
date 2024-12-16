@@ -24,7 +24,9 @@ const App = () => {
     toast.success( "New Item added" )
   }
   const removeItem = ( itemId ) => {
-    setItems( items.filter( item => item.id !== itemId ) );
+    let filteredList = items.filter( item => item.id !== itemId )
+    setItems( filteredList );
+    saveToLocalStorage( filteredList );
     toast.warning( "Item Removed" )
   }
 
